@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cui — Finance Data &amp; Risk Analytics</title>
+<style>
+  :root{
+    --ink:#0b1220; --ink-2:#1f2937; --muted:#6b7280; --faint:#9ca3af;
+    --line:#e8ecf3; --bg:#eef1f6; --card:#ffffff;
+    --accent:#3b5bdb; --accent-soft:#eef2ff;
+    --r:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink); line-height:1.65;
+    font-family:'Segoe UI',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+    -webkit-font-smoothing:antialiased; padding:56px 24px 80px;
+  }
+  .page{max-width:1040px;margin:0 auto}
+
+  .hero{
+    background:linear-gradient(160deg,#ffffff 0%,#f8faff 100%);
+    border-radius:calc(var(--r) + 6px); padding:56px 56px 48px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04),0 12px 32px -12px rgba(16,24,40,.12);
+  }
+  .eyebrow{
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:16px;
+  }
+  h1{font-size:40px;line-height:1.18;letter-spacing:-.025em;font-weight:800}
+  .lede{
+    margin-top:18px;font-size:16.5px;color:var(--ink-2);max-width:640px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{
+    display:inline-block;font-size:14px;font-weight:700;text-decoration:none;
+    padding:13px 24px;border-radius:12px;border:1px solid var(--line);
+    color:var(--ink-2);background:#fff;transition:.15s;
+  }
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(16,24,40,.4)}
+  .btn.primary:hover{background:#2f4bc4}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:22px}
+  .card{
+    background:var(--card);border-radius:var(--r);padding:30px 32px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px -14px rgba(16,24,40,.18);
+    display:flex;flex-direction:column;
+  }
+  .tag{
+    font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);background:var(--accent-soft);
+    border-radius:8px;padding:5px 10px;align-self:flex-start;margin-bottom:16px;
+  }
+  .card h2{font-size:20px;font-weight:800;letter-spacing:-.01em;line-height:1.3}
+  .card p{margin-top:10px;font-size:14px;color:var(--muted);flex:1}
+  .links{list-style:none;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+  .links li + li{margin-top:2px}
+  .links a{
+    display:flex;align-items:center;gap:8px;padding:9px 0;
+    font-size:14px;color:var(--ink-2);text-decoration:none;font-weight:600;
+  }
+  .links a:hover{color:var(--accent)}
+  .links a::before{content:"→";color:var(--faint);font-weight:400}
+  .links a:hover::before{color:var(--accent)}
+
+  footer{
+    margin-top:34px;text-align:center;font-size:12.5px;color:var(--faint);line-height:1.9;
+  }
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+
+  @media (max-width:640px){
+    body{padding:28px 14px 60px}
+    .hero{padding:36px 26px 34px}
+    h1{font-size:29px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Cui — Finance Data &amp; Risk Analytics</h1>
+    <p class="lede">
+      Two self-contained Python projects for market risk reporting and trade-log
+      attribution. Zero third-party dependencies, bundled sample data, and every
+      number traceable back to its source.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="project-01-market-risk/sample-report-pro.html">View a live report</a>
+      <a class="btn" href="https://github.com/custer961/quant-portfolio">Browse the source</a>
+    </div>
+  </header>
+
+  <section class="grid">
+
+    <article class="card">
+      <div class="tag">01 · Market risk</div>
+      <h2>Market Risk &amp; Performance Report</h2>
+      <p>
+        Fetches daily prices for any symbol, then reports CAGR, annualised
+        volatility, Sharpe, Sortino, max drawdown, Calmar, historical VaR,
+        a correlation matrix and an equal-weight comparison — with charts
+        rendered as hand-written SVG.
+      </p>
+      <ul class="links">
+        <li><a href="project-01-market-risk/sample-report-pro.html">Live report · business layout</a></li>
+        <li><a href="project-01-market-risk/sample-report.html">Live report · research layout</a></li>
+        <li><a href="project-01-market-risk/">Source &amp; README</a></li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="tag">02 · Attribution</div>
+      <h2>Trade Log Attribution</h2>
+      <p>
+        Parses a trading client's GB18030 logs, rebuilds the equity curve from
+        the broker's own snapshots, and flags overtrading days, reversal trades,
+        adding to losers and forced liquidations — each rule published.
+      </p>
+      <ul class="links">
+        <li><a href="project-02-trade-attribution/sample-output.md">Sample report</a></li>
+        <li><a href="project-02-trade-attribution/">Source &amp; README</a></li>
+      </ul>
+    </article>
+
+  </section>
+
+  <footer>
+    Analytical tools only — no trading signals, not investment advice.<br>
+    <a href="mailto:cui5995@gmail.com">cui5995@gmail.com</a> ·
+    <a href="https://github.com/custer961/quant-portfolio">github.com/custer961/quant-portfolio</a>
+  </footer>
+
+</div>
+</body>
+</html>
